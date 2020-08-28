@@ -27,7 +27,7 @@ class Main_log extends CI_Controller {
 
 			if($this->login_model->can_login($username, $password)){
 				
-				$this->load->view('Pages/dashboard');
+				redirect(base_url(). 'Main_log/dashboard');
 			}
 
 			else{
@@ -42,6 +42,10 @@ class Main_log extends CI_Controller {
 			$this->login();
 		}
 
+	}
+
+	public function dashboard(){
+		$this->load->view('Pages/dashboard');
 	}
 
 
